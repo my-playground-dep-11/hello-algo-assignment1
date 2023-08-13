@@ -6,7 +6,6 @@ public class Algo3 {
             newArray[j] = nums[i];
                         
         }
-    
         nums = newArray;
         String str = "[";
 
@@ -15,10 +14,7 @@ public class Algo3 {
             
         }
         System.out.println(str +"\b]" );
-
-        }
-
-        
+        }        
         
     }
     
