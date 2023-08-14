@@ -12,7 +12,7 @@ public class Algo7 {
         String sentence = scanner.nextLine().trim();
 
         if (!sentence.isEmpty()) {
-            String[] words = sentence.split("\\s+");
+            String[] words = sentence.split(" ");
             String shortestWord = words[1];
             String longestWord = words[1];
             String word = "";
@@ -20,7 +20,7 @@ public class Algo7 {
             //int count = 0;
             
 
-            for (int i = 0; i < words.length-1; i++ ) {
+            for (int i = 0; i < words.length; i++ ) {
                 word = words[i];
                 str = words[i];
 
