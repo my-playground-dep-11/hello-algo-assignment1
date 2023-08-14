@@ -28,12 +28,10 @@ public class Algo10 {
                 for (int i = 0; i < part.length(); i++) {
                     if (Character.isDigit(part.charAt(i))) {
                         areAllPartsDigits = true;
-                        // break;
+                        
                     }
                 }
-                // if (!areAllPartsDigits) {
-                //     break;
-                // }
+                
             }
 
             if (areAllPartsDigits) {
