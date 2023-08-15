@@ -8,49 +8,49 @@ public class Algo7 {
     public static void main(String[] args) {
         
 
-        System.out.print("Please enter a sentence: ");
-        String sentence = scanner.nextLine().trim();
+        String input;
 
-        if (!sentence.isEmpty()) {
-            String[] words = sentence.split(" ");
-            String shortestWord = words[1];
-            String longestWord = words[1];
-            String word = "";
-            String str = "";
-            //int count = 0;
-            
+        do {
 
-            for (int i = 0; i < words.length; i++ ) {
-                word = words[i];
-                str = words[i];
+            System.out.print("Enter a sentence: ");
+            input = scanner.nextLine();
 
-                if (word.length() < shortestWord.length()) {
-                    if(word.length() < shortestWord.length()){
-                        shortestWord = word;
-                    }else if (word.length() == shortestWord.length()){    
-                        shortestWord = word + "," + shortestWord;
-    
-                    }
-                        
-                }
-                if (str.length() > longestWord.length()){
-                    if(str.length() > longestWord.length()){
-                        longestWord = str;
-                    }else if(str.length() == longestWord.length()){
-                         longestWord = str + "," + longestWord;
-                    }
-                    
+        }while(input.isBlank());
 
-                }
+        String[] words = input.split(" ");
+        int maxLength = words[0].length();
+        int minLength = words[0].length();
+        String longestWord = "";
+        String smallestWord = "";
+
+
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i]; 
+
+            if (maxLength < word.length()){
+                maxLength = word.length();
+                longestWord = words[i] + ",";
+
+            } else if (maxLength == word.length()){
+                longestWord =words[i] + "," + longestWord;
             }
+            
+            if (minLength > word.length()){
+                minLength = word.length();
+                smallestWord = words[i] + ",";
 
-            System.out.println("Shortest word: " + shortestWord + " (length: " + word.length() + ")");
-            System.out.println("Longest word: " + longestWord + " (length: " + longestWord.length() + ")");
-        } else {
-            System.out.println("Input is empty. Please provide a sentence.");
+            } else if(minLength == word.length()){
+                smallestWord = words[i] + "," + smallestWord;
+
+            }
         }
 
-        scanner.close();
+
+        System.out.println("longest word's length: " + maxLength);
+        System.out.println("Smallest word's length: " + minLength);
+        System.out.println("Longest word/words: "  +longestWord + "\b ");  
+        System.out.println("Smallest word/words: " + smallestWord + "\b ");      
+
     }
 }
 
